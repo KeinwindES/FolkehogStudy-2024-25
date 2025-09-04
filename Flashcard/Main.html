@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard</title>
+    <style>
+        @font-face {
+            font-family: 'Doganicapixel';
+            src: url('Font/dogicapixel.ttf') format('truetype');
+        }
+
+        body, h1, p, a, button, nav, footer, li {
+            font-family: 'Doganicapixel';
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            border: 2px solid #000;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav, footer {
+            border: 2px solid #000;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            word-spacing: 15px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        li {
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .flashcard {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .flashcard .front {
+            display: block;
+        }
+
+        .flashcard .back {
+            display: none;
+        }
+
+        .flashcard.flipped .front {
+            display: none;
+        }
+
+        .flashcard.flipped .back {
+            display: block;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flashcard</h1>
+    <h2>Maintained by me</h2>
+    <div class="flashcard-container">
+        <!-- Flashcard will be generated here -->
+    </div>
+    <div class="button-container">
+        <button class="button easy-button">Easy</button>
+        <button class="button hard-button">Hard</button>
+    </div>
+
+    <select id="json-select">
+        <option value="JS.json">JS</option>
+        <option value="GIT.json">GIT</option>
+        <option value="HTML.json">HTML</option>
+        <option value="CSS.json">CSS</option>
+        <option value="VueJS.json">Vue.JS</option>
+    </select>      
+
+    <script>
+        const jsonSelect = document.getElementById('json-select');
+        const flashcardContainer = document.querySelector('.flashcard-container');
+        const easyButton = document.querySelector('.easy-button');
+        const hardButton = document.querySelector('.hard-button');
+        let cards = [];
+        let currentCardIndex = 0;
+
+        // Load JSON data based on selection
+        async function loadJSON(file) {
+            try {
+                const response = await fetch(file);
+                cards = await response.json();
+                currentCardIndex = 0;
+                generateFlashcard();
+            } catch (error) {
+                console.error("Error loading JSON:", error);
+            }
+        }
+
+        // Generate flashcard
+        function generateFlashcard() {
+            if (!cards || cards.length === 0) {
+                flashcardContainer.innerHTML = "No cards available.";
+                return;
+            }
+
+            const currentCard = cards[currentCardIndex];
+            const flashcard = document.createElement('div');
+            flashcard.className = 'flashcard';
+
+            const front = document.createElement('div');
+            front.className = 'front';
+            front.textContent = currentCard.front;
+
+            const back = document.createElement('div');
+            back.className = 'back';
+            back.textContent = currentCard.back;
+
+            flashcard.appendChild(front);
+            flashcard.appendChild(back);
+
+            flashcardContainer.innerHTML = '';
+            flashcardContainer.appendChild(flashcard);
+
+            flashcard.addEventListener('click', () => {
+                flashcard.classList.toggle('flipped');
+            });
+        }
+
+        // Event listeners for Easy and Hard buttons
+        easyButton.addEventListener('click', () => {
+            currentCardIndex = (currentCardIndex + 1) % cards.length;
+            generateFlashcard();
+        });
+
+        hardButton.addEventListener('click', () => {
+            currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+            generateFlashcard();
+        });
+
+        // Event listener for dropdown selection
+        jsonSelect.addEventListener('change', () => {
+            loadJSON(jsonSelect.value);
+        });
+
+        // Initial load
+        loadJSON(jsonSelect.value);
+    </script>
+    <h1>How it works</h1>
+    <p>Card: The front of the card shows a line/part of code, and the back explains what it does.<br>
+        Easy/Hard: Pressing Easy will make the card come up less often, and Hard will make it come more often (in theory).<br>
+    </p>
+
+    <!-- feedback -->
+
+    <h1>Feedback</h1>
+    <p>Primary Email: eivindnhaugland@gmail.com <br>
+        Secandary Email: eivindhaugland@icloud.com <br>
+    send mail to secandary if i dont answer within 24 hours</p>
+</body>
+</html>

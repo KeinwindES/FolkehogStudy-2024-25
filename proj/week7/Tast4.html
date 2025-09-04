@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: inline-block;
+        }
+        .row {
+            display: block;
+        }
+        .box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: lightblue;
+            margin: 1px;
+        }
+    </style>
+    <title>Pixel Grid</title>
+</head>
+<body>
+    <input type="number" id="gridSize" placeholder="Enter grid size">
+    <button onclick="createGrid()">Create Grid</button>
+    <div class="container" id="gridContainer"></div>
+
+    <script>
+        function createGrid() {
+            const container = document.getElementById('gridContainer');
+            container.innerHTML = ''; // Clear previous grid
+            const gridSize = document.getElementById('gridSize').value;
+            for (let i = 0; i < gridSize; i++) {
+                const row = document.createElement('div');
+                row.className = 'row';
+                for (let j = 0; j < gridSize; j++) {
+                    const box = document.createElement('div');
+                    box.className = 'box';
+                    row.appendChild(box);
+                }
+                container.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>

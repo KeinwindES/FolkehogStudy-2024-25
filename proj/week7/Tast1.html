@@ -1,0 +1,59 @@
+<!-- Define the document type and language -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Range</title>
+    <style>
+        /* Style the output div to have a margin, padding, border, and minimum height */
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Create a label and input field for the "from" value -->
+    <label for="from">From:</label>
+    <input type="number" id="from" required>
+    
+    <!-- Create a label and input field for the "to" value -->
+    <label for="to">To:</label>
+    <input type="number" id="to" required>
+    
+    <!-- Create a button to trigger the output -->
+    <button id="showButton">Show me</button>
+    
+    <!-- Create a div to display the output -->
+    <div id="output"></div>
+
+    <!-- Add a script to handle the button click event -->
+    <script>
+        // Get the button element and add an event listener for the click event
+        document.getElementById('showButton').addEventListener('click', function() {
+            // Get the values from the input fields and convert them to integers
+            const fromValue = parseInt(document.getElementById('from').value);
+            const toValue = parseInt(document.getElementById('to').value);
+            // Initialize an empty string to store the output
+            let output = '';
+
+            // Check if the input values are valid numbers
+            if (!isNaN(fromValue) && !isNaN(toValue)) {
+                // Loop through the numbers from the "from" value to the "to" value
+                for (let i = fromValue; i <= toValue; i++) {
+                    // Append each number to the output string
+                    output += i + ' ';
+                }
+            }
+
+            // Set the text content of the output div to the generated output
+            document.getElementById('output').textContent = output.trim();
+        });
+    </script>
+
+</body>
+</html>

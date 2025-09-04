@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Of Switch</title>
+</head>
+<body>
+    <h1>On Of Switch</h1>
+    <button><a href="Eivind.html">back</a></button>
+    <br>
+    <!-- button that changes the text of an p from on to off -->
+
+    <p id="text">on</p>
+
+    <button onclick="Change()">Change Text</button>
+    <script>
+        function Change(){
+            let text = document.getElementById("text")
+            if(text.innerHTML == "on"){
+                text.innerHTML = "off"
+            }else{
+                text.innerHTML = "on"
+            }
+        }
+    </script>
+</body>
+</html>

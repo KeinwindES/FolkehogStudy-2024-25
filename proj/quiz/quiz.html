@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <button><a href="Eivind.html">back</a></button>
+    <h1>This is a Quiz</h1>
+
+    <form id="quiz">
+        <p>Question 1: What is the name of the hobbit who inherits the One Ring?</p>
+        <input type="radio" name="q1" value="A"> Frodo Baggins
+        <input type="radio" name="q1" value="B"> Samwise Gamgee
+        <input type="radio" name="q1" value="C"> Meriadoc Brandybuck
+        <input type="radio" name="q1" value="D"> Peregrin Took
+
+        <p>Question 2: What is the name of the dark lord who created the One Ring?</p>
+        <input type="radio" name="q2" value="A"> Sauron
+        <input type="radio" name="q2" value="B"> Saruman
+        <input type="radio" name="q2" value="C"> Morgoth
+        <input type="radio" name="q2" value="D"> Grishnákh
+
+        <p>Question 3: What is the name of the king of Gondor?</p>
+        <input type="radio" name="q3" value="A"> Boromir
+        <input type="radio" name="q3" value="B"> Gandalf
+        <input type="radio" name="q3" value="C"> Aragorn
+        <input type="radio" name="q3" value="D"> Legolas
+
+        <p>Question 4: What is the name of the dragon who protects the arken stone?</p>
+        <input type="radio" name="q4" value="A"> Balrog
+        <input type="radio" name="q4" value="B"> Pakawat
+        <input type="radio" name="q4" value="C"> Smaug
+        <input type="radio" name="q4" value="D"> Angmar
+
+        <p>Question 5: what did Gandlaf tell Bilbo at the cave troll?</p>
+        <input type="radio" name="q5" value="A"> I am your father
+        <input type="radio" name="q5" value="B"> true currage knowing when to spare one
+        <input type="radio" name="q5" value="C"> death is just another path one that we all must take
+        <input type="radio" name="q5" value="D"> everyday deeds of ordinary folk is what keeps the darkness at bay
+
+        <p>Question 6: who is the oldest dwarf in Thorins company?</p>
+        <input type="radio" name="q6" value="A"> Kili
+        <input type="radio" name="q6" value="B"> Balin
+        <input type="radio" name="q6" value="C"> Thorin
+        <input type="radio" name="q6" value="D"> Bilbo
+    </form>
+
+
+    <button onclick="check()">Check</button>
+
+    <p id="number_correct"></p>
+
+    <p id="after_submit" style="visibility: hidden;">You got <span id="number_correct"></span> correct</p>
+
+    <script src="quiz.js"></script>
+    
+</body>
+</html>

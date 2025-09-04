@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+
+    <h1>Job Application</h1>
+    <form id="job-application-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="secret">Secret:</label>
+        <input type="password" id="secret" name="secret" required><br><br>
+
+        <label for="work-from-home">Work from home:</label>
+        <input type="checkbox" id="work-from-home" name="work-from-home"><br><br>
+
+        <label>Favorite Color:</label><br>
+        <input type="radio" id="red" name="favorite-color" value="red">
+        <label for="red">Red</label><br>
+        <input type="radio" id="blue" name="favorite-color" value="blue">
+        <label for="blue">Blue</label><br>
+        <input type="radio" id="green" name="favorite-color" value="green">
+        <label for="green">Green</label><br><br>
+
+        <label for="job-position">Job Position:</label>
+        <select id="job-position" name="job-position" required>
+            <option value="">Select a position</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Manager</option>
+        </select><br><br>
+
+        <label for="about">About Yourself:</label><br>
+        <textarea id="about" name="about" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('job-application-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                secret: document.getElementById('secret').value,
+                workFromHome: document.getElementById('work-from-home').checked,
+                favoriteColor: document.querySelector('input[name="favorite-color"]:checked')?.value,
+                jobPosition: document.getElementById('job-position').value,
+                about: document.getElementById('about').value,
+            };
+
+            console.log(formData);
+        });
+    </script>
+
+</body>
+</html>

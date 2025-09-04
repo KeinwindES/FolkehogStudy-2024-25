@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button><a href="Eivind.html">back</a></button>
+    <h1>Task 1</h1>
+<p id="text">heir ist ein button</p>
+<input id="input-field" type="text"> <br>
+<button onclick="Change()">Update Text</button>
+<script>
+    function Change() {
+        var textElement = document.getElementById("text");
+        var inputField = document.getElementById("input-field");
+        textElement.innerHTML = inputField.value;
+    }
+</script>
+</body>
+</html>

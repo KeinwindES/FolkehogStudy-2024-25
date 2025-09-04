@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Black Pixel</title>
+    <style>
+        /* Define the pixel container and individual pixel styling */
+        #pixel-container {
+            display: grid;
+            grid-template-columns: repeat(10, 20px); /* Adjust columns and size as needed */
+            gap: 2px;
+            width: max-content;
+            margin: 20px auto;
+        }
+        
+        .pixel {
+            width: 20px;
+            height: 20px;
+            background-color: lightgray;
+            border: 1px solid #ccc;
+        }
+        
+        /* Black class to color the pixel black */
+        .black {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div id="pixel-container"></div>
+
+<script>
+    const X = 100;  // Total number of pixels (adjust based on your grid size)
+
+    // Create pixels and add them to the container
+    for (let i = 0; i < X; i++) {
+        let pixel = document.createElement("div");
+        pixel.className = "pixel";  // Add basic pixel class
+        pixel.id = `pixel-${i}`;  // Unique ID for each pixel
+        document.getElementById("pixel-container").appendChild(pixel);
+    }
+
+    // Generate a random index to pick a pixel
+    let randomIndex = Math.floor(Math.random() * X);
+
+    // Find the pixel by ID and add the "black" class to it
+    let randomPixel = document.getElementById(`pixel-${randomIndex}`);
+    randomPixel.classList.add("black");
+</script>
+
+</body>
+</html>

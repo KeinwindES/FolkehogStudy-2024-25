@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button><a href="Eivind.html">back</a></button>
+    <h1>Task 2</h1>
+    <p id="text"></p>
+    <input id="input-field" type="text"> <br>
+    <button onclick="add()">add</button>
+    <button onclick="remove()">remove</button> <br> <br>
+    <p id="text2"></p>
+    <button onclick="search()">search</button>
+    <script>
+        let list = [];
+
+        function add() {
+            const input = document.getElementById("input-field").value;
+            list.push(input);
+            document.getElementById("text").innerHTML = list.toString("<br>");
+            document.getElementById("input-field").value = "";
+        }
+
+        function remove() {
+            console.log(list);
+            list.pop(); 
+            console.log(list);
+            document.getElementById("text").innerHTML = list.toString("<br>");
+        }
+
+        function search() {
+            const input = document.getElementById("input-field").value;
+            const index = list.indexOf(input); // use indexOf() method to search for the value
+            if (index !== -1) {
+                document.getElementById("text2").innerHTML = "found";
+            } else {
+                document.getElementById("text2").innerHTML = "not found";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+    {
+        "front": "Git push",
+        "back": "pushes changes to the remote repository"
+    },
+    {
+        "front": "git pull",
+        "back": "pulls changes from the remote repository"
+    },
+    {
+        "front": "",
+        "back": ""
+    }
+]

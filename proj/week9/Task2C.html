@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Mover</title>
+  <style>
+    /* Basic styling for the pixels */
+    .pixel {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      background-color: lightgray;
+      margin: 2px;
+    }
+    .pixel.active {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pixel elements -->
+  <div class="pixel"></div>
+  <div class="pixel active"></div> <!-- Start with one active pixel -->
+  <div class="pixel"></div>
+  <div class="pixel"></div>
+  <div class="pixel"></div>
+
+  <script>
+    // Add the event listener to the body
+    document.body.addEventListener("keyup", function(event) {
+      // Select all the "pixels"
+      let pixels = document.querySelectorAll(".pixel");
+      // Find the current active pixel
+      let currentIndex = Array.from(pixels).findIndex(pixel => pixel.classList.contains("active"));
+      
+      // Remove the "active" class from the current pixel
+      pixels[currentIndex].classList.remove("active");
+
+      // Check which key is pressed and update the index accordingly
+      if (event.key === "ArrowLeft") {
+        // Move left, wrap around if at the first pixel
+        currentIndex = (currentIndex === 0) ? pixels.length - 1 : currentIndex - 1;
+      } else if (event.key === "ArrowRight") {
+        // Move right, wrap around if at the last pixel
+        currentIndex = (currentIndex === pixels.length - 1) ? 0 : currentIndex + 1;
+      }
+
+      // Add the "active" class to the new pixel
+      pixels[currentIndex].classList.add("active");
+    });
+  </script>
+
+</body>
+</html>

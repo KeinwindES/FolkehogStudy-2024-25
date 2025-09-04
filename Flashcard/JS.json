@@ -1,0 +1,14 @@
+[
+    {
+        "front": "let myArray = [];",
+        "back": "Declare a variable and at the same time assign it an empty array"
+    },
+    {
+        "front": "for (let i = 0; i < 5; i++) { ... }",
+        "back": "creates a for loop that runs 5 times"
+    },
+    {
+        "front": "",
+        "back": ""
+    }
+]

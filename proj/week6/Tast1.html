@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Colour Game</title>
+</head>
+<body>
+    <button><a href="Eivind.html">Back</a></button>
+    <h1>Heyo</h1>
+    
+    <div id="image-container">
+        <img src="img/1St.png" alt="First">
+        <img src="img/2nd.png" alt="Second">
+        <img src="img/3rd.png" alt="Third">
+        <img src="img/4th.png" alt="Fourth">
+    </div>
+
+    <div id="output"></div>
+    
+    <!-- Add Remove Button -->
+    <button id="remove-button">Remove All</button>
+
+    <script>
+        const messages = [];
+        const imageTexts = ['first', 'second', 'third', 'fourth'];
+
+        // Get all images
+        const images = document.querySelectorAll('#image-container img');
+
+        // Loop through images and add click event
+        for (let i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                myFunction(imageTexts[i]);
+            };
+        }
+
+        function myFunction(imageText) {
+            // Add the message to the array
+            messages.push(imageText);
+            
+            // Display the messages
+            document.getElementById("output").innerText = messages.join(', ');
+        }
+
+        // Add event listener for the remove button
+        document.getElementById("remove-button").onclick = function() {
+            // Clear the messages array
+            messages.length = 0;
+            
+            // Clear the displayed messages
+            document.getElementById("output").innerText = '';
+        };
+    </script>
+</body>
+</html>

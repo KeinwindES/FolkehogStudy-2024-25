@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Example</title>
+
+        <script src="JSGuessGame.js"></script>
+
+    </head>
+
+    <body>
+        <button><a href="Eivind.html">back</a></button>
+        <!--
+        Task 1: When the user inputs a value that is outside of the range the
+                program should display a different message with a quick hint
+                DONE
+        Task 2: When the user doesn't provide any input, the message should say so
+                DONE
+        Task 3: Move all javascript code into seperate .js files and include them
+                in the html file
+                DONE
+        Task 4: Make a new input field in HTML, with a button next to it. When the
+                user press this button, use the number to set a new maximum number
+        -->
+        <main>
+            <p>Guess my secret number from 0 - <span id="maxnumber"></span> ?</p>
+
+            <input id="guess" type="number" />
+
+            <button onclick="guess()">Guess!</button>
+
+            <p id="answer"></p>
+        </main>
+
+        <script src="JSGuessGame2nd.js"></script>
+
+        <div>
+            <p>change max number</p>
+
+            <input id="change" type="number" />
+
+            <button onclick="changeMaxNum()">change</button>
+
+            <script src="changeMaxNum.js"></script>
+        </div>
+
+
+    </body>
+</html>

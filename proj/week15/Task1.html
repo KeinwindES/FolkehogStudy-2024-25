@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+        <label>INPUT DATA;</label>
+        <br>
+        <div>
+            LHPQWBVKSJXUZVITCYAFRDNOQKMWLHXALNJGSZBIEVUDCPYQFTAROWJMCXSZLHGIRPXTOKVQALUDNBFMWZYRJVECIPTSKXGJHLUNIQZBDVCWFOAERMTXKUYJPHGSVILWCQZTXFNAOBRDKJLUPVIEOYSKCXTZBFWGMDRNVAJQITLCSKWUHRZOPEXYGDTVBQFONLCJAIHWPXEKVUZTYFSRDGQOAMLHZJXCUVFNIKBPOYTWSLHRZQIMUJXKABOCDGVPFYTAIWLSZCNROHMPFJUETQXBGVYKCOIHWDLNAKZRJPUTFBXYSLQMWCEGVRJNTAZKPUDFOIXWBGVYLHCMJSAKZPFWOTBRXUGVYDLJCAWNSIHPMUKFEXZQTBRYJVCOSLIDWNHFPUXMTZGVAKLYWOBCQJIRNSHTKFGVZAXUPMWOLYCJQHBIETRFVKOSLAXWGNDPYUJMZB
+        </div>
+        <br>
+        For each of the letters below, find how many of them are in the INPUT DATA above
+        <ul>
+            <li>X</li>
+            <li>M</li>
+            <li>A</li>
+            <li>S</li>
+        </ul>
+        <hr>
+
+    </main>
+
+
+    <!-- PUT YOUR JAVASCRIPT HERE -->
+    <script>
+        let input = 'LHPQWBVKSJXUZVITCYAFRDNOQKMWLHXALNJGSZBIEVUDCPYQFTAROWJMCXSZLHGIRPXTOKVQALUDNBFMWZYRJVECIPTSKXGJHLUNIQZBDVCWFOAERMTXKUYJPHGSVILWCQZTXFNAOBRDKJLUPVIEOYSKCXTZBFWGMDRNVAJQITLCSKWUHRZOPEXYGDTVBQFONLCJAIHWPXEKVUZTYFSRDGQOAMLHZJXCUVFNIKBPOYTWSLHRZQIMUJXKABOCDGVPFYTAIWLSZCNROHMPFJUETQXBGVYKCOIHWDLNAKZRJPUTFBXYSLQMWCEGVRJNTAZKPUDFOIXWBGVYLHCMJSAKZPFWOTBRXUGVYDLJCAWNSIHPMUKFEXZQTBRYJVCOSLIDWNHFPUXMTZGVAKLYWOBCQJIRNSHTKFGVZAXUPMWOLYCJQHBIETRFVKOSLAXWGNDPYUJMZB';
+        let letters = ['X', 'M', 'A', 'S'];
+        let counts = [];
+
+        for (let i = 0; i < letters.length; i++) {
+            let count = 0;
+            for (let j = 0; j < input.length; j++) {
+                if (input[j] === letters[i]) {
+                    count++;
+                }
+            }
+            counts.push(count);
+        }
+
+        for (let i = 0; i < letters.length; i++) {
+            document.write(letters[i] + ': ' + counts[i] + '<br>');
+        }
+    </script>
+
+    <!-- PUT YOUR CSS HERE -->
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+
+</body>
+</html>

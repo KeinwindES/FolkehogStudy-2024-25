@@ -1,0 +1,39 @@
+[
+    {
+        "front": "npm install vue",
+        "back": "installs Vue.js"
+    },
+    {
+        "front": "const app = Vue.createApp({ ... })",
+        "back": "creates a Vue app"
+    },
+    {
+        "front": "npm run dev",
+        "back": "runs the server"
+    },
+    {
+        "front": "(shortcut) h + enter",
+        "back": "shows list of comands"
+    },
+    {
+        "front": "(shortcut) r + enter",
+        "back": "restarts the server"
+    },
+    {
+        "front": "(shortcut) u + enter",
+        "back": "show server url"
+    },
+    {
+        "front": "(shortcut) o + enter",
+        "back": "opens in browser"
+    },
+    {
+        "front": "(shortcut) c + enter",
+        "back": "clears the console"
+    },
+    {
+        "front": "(shortcut) q + enter",
+        "back": "quits the server"
+    }
+
+]

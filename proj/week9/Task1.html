@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            color: #495057;
+            line-height: 1.6;
+            margin: 10;
+            padding: 10;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #212529;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #495057;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Job Application Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="secret">Secret:</label>
+        <input type="password" id="secret" name="secret">
+
+        <label>Work from home:</label>
+        <input type="checkbox" id="work-from-home" name="work-from-home"> Yes
+
+        <label>Favorite color:</label>
+        <input type="radio" id="red" name="favorite-color" value="red">
+        <label for="red">Red</label>
+        <input type="radio" id="green" name="favorite-color" value="green">
+        <label for="green">Green</label>
+        <input type="radio" id="blue" name="favorite-color" value="blue">
+        <label for="blue">Blue</label>
+
+        <label for="job-position">Job position:</label>
+        <select id="job-position" name="job-position">
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Manager</option>
+        </select>
+
+        <label for="about">Tell us about yourself:</label>
+        <textarea id="about" name="about" rows="4"></textarea>
+
+        <button type="submit">Apply for job</button>
+    </form>
+</div>
+
+</body>
+</html>

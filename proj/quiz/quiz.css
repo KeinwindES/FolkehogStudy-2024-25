@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    color: #495057;
+    line-height: 1.6;
+    margin: 10;
+    padding: 10;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #212529;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+  }
+  
+  p {
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  article {
+    margin-bottom: 25px;
+  }
+  
+  section {
+    margin-bottom: 50px;
+  }
+  
+  a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ffffff;
+  }
+  div {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    text-align: center;
+  }
+  img {
+    max-width: 25%;
+    height: auto;
+  }
+  
+  nav {
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    width: 300px;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
